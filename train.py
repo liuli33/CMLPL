@@ -307,8 +307,8 @@ def main(args):
 
         img = DrawResult(predict_label + 1, args.dataID)
         plt.imsave(save_path_prefix + 'IP_NEW_OUR' + 'OA_' + repr(int(OA * 10000)) + '.svg', img, dpi=300)
-        plt.axis('off')  # 去坐标轴
-        plt.xticks([])  # 去刻度
+        plt.axis('off')  # 
+        plt.xticks([])  #
         plt.imshow(img)
         plt.savefig(save_path_prefix + 'IP_OUR_NEW_NEG' + 'OA_' + repr(int(OA * 10000)) + '.svg',
                    dpi=1000, bbox_inches='tight',transparent = True, pad_inches = 0)
