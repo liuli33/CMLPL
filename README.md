@@ -1,5 +1,6 @@
 
 ## Preparation
+* This pertains to the code implementation of the paper titled "Contrastive Mutual Learning with Pseudo Label Smoothing for Hyperspectral Image Classification".
 * Install required packages: `pip install -r requirements.txt`
 
 * Download the [Pavia University image](http://www.ehu.eus/ccwintco/uploads/e/ee/PaviaU.mat) and the corresponding [annotations](http://www.ehu.eus/ccwintco/uploads/5/50/PaviaU_gt.mat). Put these files into the `dataset` folder.
