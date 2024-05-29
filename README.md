@@ -19,3 +19,4 @@ $ python sample_generation.py
 ```
 $ CUDA_VISIBLE_DEVICES=0 python train.py
 ```
+L. Liu, H. Zhang and Y. Wang, "Contrastive Mutual Learning with Pseudo-Label Smoothing for Hyperspectral Image Classification," in IEEE Transactions on Instrumentation and Measurement, doi: 10.1109/TIM.2024.3406811.
