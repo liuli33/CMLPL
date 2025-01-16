@@ -319,4 +319,12 @@ class decoder(nn.Module):
 
         return y_re, x_re
 
+class classifier(nn.Module):
+    def __init__(self, num_class):
+        super(classifier, self).__init__()
+        self.fc = nn.Linear(2624, num_class, bias=True)
+        # self.f.load_state_dict(torch.load(pretrained_path), strict=False)
 
+    def forward(self, x):
+        out = self.fc(x)
+        return out
