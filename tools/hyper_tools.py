@@ -458,3 +458,27 @@ def base_test_whole(model, data_loader, print_per_batches=10):
             batch_idx + 1, num_batches))
 
     return output
+    
+def CCT_test_whole(model,dcoder, data_loader, print_per_batches=10):
+    model.eval()
+    dcoder.eval()
+    num_batches = len(data_loader)
+    for batch_idx, data in enumerate(data_loader):
+        XP, X = data
+        XP = XP.cuda()
+        X = X.cuda()
+
+        feature,_ = model(XP, X)
+        outputs = dcoder(feature)
+        _, predicted = torch.max(outputs, 1)
+        predicted = predicted.cpu().numpy()
+        if batch_idx == 0:
+            output = predicted
+        else:
+            output = np.append(output, predicted)
+
+        if (batch_idx + 1) % print_per_batches == 0:
+            print('---------------------Testing the whole set-[%d/%d]---------------------' % (
+            batch_idx + 1, num_batches))
+
+    return output
